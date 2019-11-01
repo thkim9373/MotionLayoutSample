@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">MotionLayoutSample</string>
+    <string name="play_speed">재생 속도</string>
+</resources>

@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <Transition
+        motion:constraintSetEnd="@+id/cs_small_video"
+        motion:constraintSetStart="@+id/cs_full_video"
+        motion:duration="300"
+        motion:motionInterpolator="linear">
+        <OnSwipe
+            motion:dragDirection="dragUp"
+            motion:touchAnchorId="@+id/sv_video"
+            motion:touchAnchorSide="top" />
+
+        <OnClick
+            motion:clickAction="toggle"
+            motion:targetId="@id/iv_close" />
+
+        <ConstraintSet android:id="@id/cs_full_video">
+            <Constraint
+                android:id="@id/gl_hor75"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                motion:layout_constraintGuide_percent="0.75" />
+
+            <Constraint
+                android:id="@id/view_background"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#99000000"
+                motion:layout_constraintBottom_toBottomOf="parent"
+                motion:layout_constraintEnd_toEndOf="parent"
+                motion:layout_constraintStart_toStartOf="parent"
+                motion:layout_constraintTop_toTopOf="parent" />
+
+            <Constraint
+                android:id="@id/iv_close"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/close"
+                motion:layout_constraintBottom_toTopOf="@id/sv_video"
+                motion:layout_constraintEnd_toEndOf="@id/sv_video" />
+
+            <Constraint
+                android:id="@id/sv_video"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                motion:layout_constraintBottom_toBottomOf="parent"
+                motion:layout_constraintEnd_toEndOf="parent"
+                motion:layout_constraintHeight_percent="0.8"
+                motion:layout_constraintHorizontal_bias="0.5"
+                motion:layout_constraintStart_toStartOf="parent"
+                motion:layout_constraintTop_toTopOf="parent"
+                motion:layout_constraintVertical_bias="0.5"
+                motion:layout_constraintWidth_percent="0.8" />
+
+            <Constraint
+                android:id="@id/iv_replay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/replay"
+                android:visibility="gone"
+                motion:layout_constraintBottom_toBottomOf="@id/sv_video"
+                motion:layout_constraintEnd_toEndOf="@id/sv_video"
+                motion:layout_constraintStart_toStartOf="@id/sv_video"
+                motion:layout_constraintTop_toTopOf="@id/sv_video"
+                motion:visibilityMode="ignore"
+                tools:visibility="visible" />
+
+            <Constraint
+                android:id="@id/rv_play_speed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                motion:layout_constraintBottom_toTopOf="@id/cl_controller"
+                motion:layout_constraintEnd_toEndOf="@id/sv_video"
+                motion:visibilityMode="ignore"
+                tools:listitem="@layout/item_play_speed"
+                tools:visibility="visible" />
+
+            <Constraint
+                android:id="@id/cl_controller"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="#80000000"
+                android:visibility="invisible"
+                motion:layout_constraintBottom_toBottomOf="@id/sv_video"
+                motion:layout_constraintEnd_toEndOf="@id/sv_video"
+                motion:layout_constraintStart_toStartOf="@id/sv_video"
+                motion:layout_constraintTop_toBottomOf="@id/gl_hor75"
+                motion:visibilityMode="ignore"
+                tools:visibility="visible" />
+        </ConstraintSet>
+
+        <ConstraintSet android:id="@id/cs_small_video">
+            <Constraint
+                android:id="@id/gl_hor75"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                motion:layout_constraintGuide_percent="0.75" />
+
+            <Constraint
+                android:id="@id/view_background"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#99000000"
+                motion:layout_constraintBottom_toBottomOf="parent"
+                motion:layout_constraintEnd_toEndOf="parent"
+                motion:layout_constraintStart_toStartOf="parent"
+                motion:layout_constraintTop_toTopOf="parent" />
+
+            <Constraint
+                android:id="@id/iv_close"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/close"
+                motion:layout_constraintBottom_toTopOf="@id/sv_video"
+                motion:layout_constraintEnd_toEndOf="@id/sv_video" />
+
+            <Constraint
+                android:id="@id/sv_video"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                motion:layout_constraintBottom_toBottomOf="parent"
+                motion:layout_constraintEnd_toEndOf="parent"
+                motion:layout_constraintHeight_percent="0.5"
+                motion:layout_constraintHorizontal_bias="1"
+                motion:layout_constraintStart_toStartOf="parent"
+                motion:layout_constraintTop_toTopOf="parent"
+                motion:layout_constraintVertical_bias="1"
+                motion:layout_constraintWidth_percent="0.5" />
+
+            <Constraint
+                android:id="@id/iv_replay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/replay"
+                android:visibility="gone"
+                motion:layout_constraintBottom_toBottomOf="@id/sv_video"
+                motion:layout_constraintEnd_toEndOf="@id/sv_video"
+                motion:layout_constraintStart_toStartOf="@id/sv_video"
+                motion:layout_constraintTop_toTopOf="@id/sv_video"
+                motion:visibilityMode="ignore"
+                tools:visibility="visible" />
+
+            <Constraint
+                android:id="@id/rv_play_speed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                motion:layout_constraintBottom_toTopOf="@id/cl_controller"
+                motion:layout_constraintEnd_toEndOf="@id/sv_video"
+                motion:visibilityMode="ignore"
+                tools:listitem="@layout/item_play_speed"
+                tools:visibility="visible" />
+
+            <Constraint
+                android:id="@id/cl_controller"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="#80000000"
+                android:visibility="invisible"
+                motion:layout_constraintBottom_toBottomOf="@id/sv_video"
+                motion:layout_constraintEnd_toEndOf="@id/sv_video"
+                motion:layout_constraintStart_toStartOf="@id/sv_video"
+                motion:layout_constraintTop_toBottomOf="@id/gl_hor75"
+                motion:visibilityMode="ignore"
+                tools:visibility="visible" />
+        </ConstraintSet>
+    </Transition>
+</MotionScene>

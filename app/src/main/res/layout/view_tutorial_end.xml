@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_hor75"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.75" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#99000000" />
+
+    <ImageView
+        android:id="@+id/iv_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/close"
+        app:layout_constraintBottom_toTopOf="@id/sv_video"
+        app:layout_constraintEnd_toEndOf="@id/sv_video" />
+
+    <SurfaceView
+        android:id="@+id/sv_video"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.5"
+        app:layout_constraintHorizontal_bias="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1"
+        app:layout_constraintWidth_percent="0.5" />
+
+    <ImageView
+        android:id="@+id/iv_replay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/replay"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/sv_video"
+        app:layout_constraintEnd_toEndOf="@id/sv_video"
+        app:layout_constraintStart_toStartOf="@id/sv_video"
+        app:layout_constraintTop_toTopOf="@id/sv_video"
+        tools:visibility="visible" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_play_speed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/cl_controller"
+        app:layout_constraintEnd_toEndOf="@id/sv_video"
+        tools:listitem="@layout/item_play_speed"
+        tools:visibility="visible" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_controller"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#80000000"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@id/sv_video"
+        app:layout_constraintEnd_toEndOf="@id/sv_video"
+        app:layout_constraintStart_toStartOf="@id/sv_video"
+        app:layout_constraintTop_toBottomOf="@id/gl_hor75"
+        tools:visibility="visible">
+
+        <SeekBar
+            android:id="@+id/sb_progress"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintBottom_toTopOf="@id/iv_toggle_play_pause"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="spread" />
+
+        <TextView
+            android:id="@+id/tv_play_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffff"
+            app:layout_constraintEnd_toEndOf="@id/sb_progress"
+            app:layout_constraintTop_toBottomOf="@id/sb_progress"
+            tools:text="0:00/0:00" />
+
+        <ImageView
+            android:id="@+id/iv_toggle_play_pause"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/play_arrow"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sb_progress" />
+
+        <TextView
+            android:id="@+id/tv_play_speed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/backgroubd_play_speed"
+            android:padding="4dp"
+            android:text="@string/play_speed"
+            android:textColor="#ffffff"
+            app:layout_constraintBottom_toBottomOf="@id/iv_toggle_play_pause"
+            app:layout_constraintEnd_toEndOf="@id/tv_play_time"
+            app:layout_constraintHorizontal_bias="1"
+            app:layout_constraintStart_toEndOf="@id/iv_toggle_play_pause"
+            app:layout_constraintTop_toTopOf="@id/iv_toggle_play_pause" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
