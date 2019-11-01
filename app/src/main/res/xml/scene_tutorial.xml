@@ -6,12 +6,12 @@
     <Transition
         motion:constraintSetEnd="@+id/cs_small_video"
         motion:constraintSetStart="@+id/cs_full_video"
-        motion:duration="300"
+        motion:duration="150"
         motion:motionInterpolator="linear">
         <OnSwipe
-            motion:dragDirection="dragUp"
-            motion:touchAnchorId="@+id/sv_video"
-            motion:touchAnchorSide="top" />
+            motion:dragDirection="dragDown"
+
+            motion:touchAnchorSide="bottom" />
 
         <OnClick
             motion:clickAction="toggle"
@@ -40,11 +40,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/close"
-                motion:layout_constraintBottom_toTopOf="@id/sv_video"
-                motion:layout_constraintEnd_toEndOf="@id/sv_video" />
+                motion:layout_constraintBottom_toTopOf="@id/texture_view_video"
+                motion:layout_constraintEnd_toEndOf="@id/texture_view_video" />
 
             <Constraint
-                android:id="@id/sv_video"
+                android:id="@id/texture_view_video"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 motion:layout_constraintBottom_toBottomOf="parent"
@@ -62,10 +62,10 @@
                 android:layout_height="wrap_content"
                 android:src="@drawable/replay"
                 android:visibility="gone"
-                motion:layout_constraintBottom_toBottomOf="@id/sv_video"
-                motion:layout_constraintEnd_toEndOf="@id/sv_video"
-                motion:layout_constraintStart_toStartOf="@id/sv_video"
-                motion:layout_constraintTop_toTopOf="@id/sv_video"
+                motion:layout_constraintBottom_toBottomOf="@id/texture_view_video"
+                motion:layout_constraintEnd_toEndOf="@id/texture_view_video"
+                motion:layout_constraintStart_toStartOf="@id/texture_view_video"
+                motion:layout_constraintTop_toTopOf="@id/texture_view_video"
                 motion:visibilityMode="ignore"
                 tools:visibility="visible" />
 
@@ -75,7 +75,7 @@
                 android:layout_height="wrap_content"
                 android:visibility="invisible"
                 motion:layout_constraintBottom_toTopOf="@id/cl_controller"
-                motion:layout_constraintEnd_toEndOf="@id/sv_video"
+                motion:layout_constraintEnd_toEndOf="@id/texture_view_video"
                 motion:visibilityMode="ignore"
                 tools:listitem="@layout/item_play_speed"
                 tools:visibility="visible" />
@@ -86,9 +86,9 @@
                 android:layout_height="0dp"
                 android:background="#80000000"
                 android:visibility="invisible"
-                motion:layout_constraintBottom_toBottomOf="@id/sv_video"
-                motion:layout_constraintEnd_toEndOf="@id/sv_video"
-                motion:layout_constraintStart_toStartOf="@id/sv_video"
+                motion:layout_constraintBottom_toBottomOf="@id/texture_view_video"
+                motion:layout_constraintEnd_toEndOf="@id/texture_view_video"
+                motion:layout_constraintStart_toStartOf="@id/texture_view_video"
                 motion:layout_constraintTop_toBottomOf="@id/gl_hor75"
                 motion:visibilityMode="ignore"
                 tools:visibility="visible" />
@@ -117,11 +117,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/close"
-                motion:layout_constraintBottom_toTopOf="@id/sv_video"
-                motion:layout_constraintEnd_toEndOf="@id/sv_video" />
+                motion:layout_constraintBottom_toTopOf="@id/texture_view_video"
+                motion:layout_constraintEnd_toEndOf="@id/texture_view_video" />
 
             <Constraint
-                android:id="@id/sv_video"
+                android:id="@id/texture_view_video"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 motion:layout_constraintBottom_toBottomOf="parent"
@@ -139,10 +139,10 @@
                 android:layout_height="wrap_content"
                 android:src="@drawable/replay"
                 android:visibility="gone"
-                motion:layout_constraintBottom_toBottomOf="@id/sv_video"
-                motion:layout_constraintEnd_toEndOf="@id/sv_video"
-                motion:layout_constraintStart_toStartOf="@id/sv_video"
-                motion:layout_constraintTop_toTopOf="@id/sv_video"
+                motion:layout_constraintBottom_toBottomOf="@id/texture_view_video"
+                motion:layout_constraintEnd_toEndOf="@id/texture_view_video"
+                motion:layout_constraintStart_toStartOf="@id/texture_view_video"
+                motion:layout_constraintTop_toTopOf="@id/texture_view_video"
                 motion:visibilityMode="ignore"
                 tools:visibility="visible" />
 
@@ -151,11 +151,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:visibility="gone"
-                motion:layout_constraintBottom_toTopOf="@id/cl_controller"
-                motion:layout_constraintEnd_toEndOf="@id/sv_video"
+                motion:layout_constraintTop_toTopOf="@id/texture_view_video"
+                motion:layout_constraintEnd_toEndOf="@id/texture_view_video"
                 motion:visibilityMode="ignore"
                 tools:listitem="@layout/item_play_speed"
                 tools:visibility="visible" />
+<!--            motion:layout_constraintBottom_toTopOf="@id/cl_controller"-->
 
             <Constraint
                 android:id="@id/cl_controller"
@@ -163,10 +164,10 @@
                 android:layout_height="0dp"
                 android:background="#80000000"
                 android:visibility="invisible"
-                motion:layout_constraintBottom_toBottomOf="@id/sv_video"
-                motion:layout_constraintEnd_toEndOf="@id/sv_video"
-                motion:layout_constraintStart_toStartOf="@id/sv_video"
-                motion:layout_constraintTop_toBottomOf="@id/gl_hor75"
+                motion:layout_constraintBottom_toBottomOf="@id/texture_view_video"
+                motion:layout_constraintEnd_toEndOf="@id/texture_view_video"
+                motion:layout_constraintStart_toStartOf="@id/texture_view_video"
+                motion:layout_constraintTop_toTopOf="@id/texture_view_video"
                 motion:visibilityMode="ignore"
                 tools:visibility="visible" />
         </ConstraintSet>

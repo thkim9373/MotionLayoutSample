@@ -11,7 +11,6 @@ import android.os.Build;
 import android.os.Handler;
 import android.transition.TransitionManager;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.Surface;
@@ -85,34 +84,13 @@ public class TutorialVideoView extends MotionLayout
 
     private void setListener() {
         binding.ivClose.setOnClickListener(TutorialVideoView.this);
-        binding.svVideo.setSurfaceTextureListener(TutorialVideoView.this);
-        binding.svVideo.setOnClickListener(TutorialVideoView.this);
+        binding.textureViewVideo.setSurfaceTextureListener(TutorialVideoView.this);
+        binding.textureViewVideo.setOnClickListener(TutorialVideoView.this);
         binding.clController.setOnTouchListener(TutorialVideoView.this);
         binding.ivTogglePlayPause.setOnClickListener(TutorialVideoView.this);
         binding.sbProgress.setOnSeekBarChangeListener(TutorialVideoView.this);
         binding.tvPlaySpeed.setOnClickListener(TutorialVideoView.this);
         binding.ivReplay.setOnClickListener(TutorialVideoView.this);
-        binding.motionLayout.setTransitionListener(new TransitionListener() {
-            @Override
-            public void onTransitionStarted(MotionLayout motionLayout, int i, int i1) {
-                Log.d("TAG", "onTransitionStarted");
-            }
-
-            @Override
-            public void onTransitionChange(MotionLayout motionLayout, int i, int i1, float v) {
-                Log.d("TAG", "onTransitionChange");
-            }
-
-            @Override
-            public void onTransitionCompleted(MotionLayout motionLayout, int i) {
-                Log.d("TAG", "onTransitionCompleted");
-            }
-
-            @Override
-            public void onTransitionTrigger(MotionLayout motionLayout, int i, boolean b, float v) {
-                Log.d("TAG", "onTransitionTrigger");
-            }
-        });
     }
 
     private void initView() {
@@ -220,7 +198,7 @@ public class TutorialVideoView extends MotionLayout
             case R.id.iv_close:
                 this.setVisibility(GONE);
                 break;
-            case R.id.sv_video:
+            case R.id.texture_view_video:
                 toggleController();
                 hidePlaySpeedList();
                 break;

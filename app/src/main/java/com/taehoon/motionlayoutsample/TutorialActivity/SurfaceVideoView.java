@@ -84,7 +84,7 @@ public class SurfaceVideoView extends MotionLayout
     private void setListener() {
         binding.ivClose.setOnClickListener(SurfaceVideoView.this);
 //        binding.svVideo.getHolder().addCallback(TutorialVideoView.this);
-        binding.svVideo.setOnClickListener(SurfaceVideoView.this);
+        binding.textureViewVideo.setOnClickListener(SurfaceVideoView.this);
         binding.clController.setOnTouchListener(SurfaceVideoView.this);
         binding.ivTogglePlayPause.setOnClickListener(SurfaceVideoView.this);
         binding.sbProgress.setOnSeekBarChangeListener(SurfaceVideoView.this);
@@ -210,7 +210,7 @@ public class SurfaceVideoView extends MotionLayout
             case R.id.iv_close:
                 this.setVisibility(GONE);
                 break;
-            case R.id.sv_video:
+            case R.id.texture_view_video:
                 toggleController();
                 hidePlaySpeedList();
                 break;

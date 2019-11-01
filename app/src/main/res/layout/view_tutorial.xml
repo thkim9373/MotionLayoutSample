@@ -27,11 +27,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/close"
-            app:layout_constraintBottom_toTopOf="@id/sv_video"
-            app:layout_constraintEnd_toEndOf="@id/sv_video" />
+            app:layout_constraintBottom_toTopOf="@id/texture_view_video"
+            app:layout_constraintEnd_toEndOf="@id/texture_view_video" />
 
         <TextureView
-            android:id="@+id/sv_video"
+            android:id="@+id/texture_view_video"
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -47,10 +47,10 @@
             android:layout_height="wrap_content"
             android:src="@drawable/replay"
             android:visibility="gone"
-            app:layout_constraintBottom_toBottomOf="@id/sv_video"
-            app:layout_constraintEnd_toEndOf="@id/sv_video"
-            app:layout_constraintStart_toStartOf="@id/sv_video"
-            app:layout_constraintTop_toTopOf="@id/sv_video"
+            app:layout_constraintBottom_toBottomOf="@id/texture_view_video"
+            app:layout_constraintEnd_toEndOf="@id/texture_view_video"
+            app:layout_constraintStart_toStartOf="@id/texture_view_video"
+            app:layout_constraintTop_toTopOf="@id/texture_view_video"
             tools:visibility="visible" />
 
         <androidx.recyclerview.widget.RecyclerView
@@ -59,7 +59,7 @@
             android:layout_height="wrap_content"
             android:visibility="invisible"
             app:layout_constraintBottom_toTopOf="@id/cl_controller"
-            app:layout_constraintEnd_toEndOf="@id/sv_video"
+            app:layout_constraintEnd_toEndOf="@id/texture_view_video"
             tools:listitem="@layout/item_play_speed"
             tools:visibility="visible" />
 
@@ -69,9 +69,9 @@
             android:layout_height="0dp"
             android:background="#80000000"
             android:visibility="invisible"
-            app:layout_constraintBottom_toBottomOf="@id/sv_video"
-            app:layout_constraintEnd_toEndOf="@id/sv_video"
-            app:layout_constraintStart_toStartOf="@id/sv_video"
+            app:layout_constraintBottom_toBottomOf="@id/texture_view_video"
+            app:layout_constraintEnd_toEndOf="@id/texture_view_video"
+            app:layout_constraintStart_toStartOf="@id/texture_view_video"
             app:layout_constraintTop_toBottomOf="@id/gl_hor75"
             tools:visibility="visible">
 

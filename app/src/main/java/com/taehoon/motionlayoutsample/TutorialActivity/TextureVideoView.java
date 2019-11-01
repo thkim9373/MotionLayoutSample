@@ -85,8 +85,8 @@ public class TextureVideoView extends MotionLayout
 
     private void setListener() {
         binding.ivClose.setOnClickListener(TextureVideoView.this);
-        binding.svVideo.setSurfaceTextureListener(TextureVideoView.this);
-        binding.svVideo.setOnClickListener(TextureVideoView.this);
+        binding.textureViewVideo.setSurfaceTextureListener(TextureVideoView.this);
+        binding.textureViewVideo.setOnClickListener(TextureVideoView.this);
         binding.clController.setOnTouchListener(TextureVideoView.this);
         binding.ivTogglePlayPause.setOnClickListener(TextureVideoView.this);
         binding.sbProgress.setOnSeekBarChangeListener(TextureVideoView.this);
@@ -212,7 +212,7 @@ public class TextureVideoView extends MotionLayout
             case R.id.iv_close:
                 this.setVisibility(GONE);
                 break;
-            case R.id.sv_video:
+            case R.id.texture_view_video:
                 toggleController();
                 hidePlaySpeedList();
                 break;
